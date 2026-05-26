@@ -1,0 +1,13 @@
+# AI and Environment
+.gemini
+.antigravitycli
+.env*
+Prompt.md
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+image.png
+
+# UI Folder
+rozdi/UI/
+UI/

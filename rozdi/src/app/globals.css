@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-canvas: #F9F9F9;
+  --color-cream: #FDFDF0;
+  --color-charcoal: #1A1A1A;
+  --color-border: #E5E7EB;
+  
+  --radius-none: 0px;
+  --radius-capsule: 9999px;
+  
+  --font-sans: "Inter", sans-serif;
+  
+  --tracking-tightest: -0.02em;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+}
+
+* {
+  /* removed border-radius override to match new design */
+}
