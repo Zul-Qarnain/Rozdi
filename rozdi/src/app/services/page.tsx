@@ -1,190 +1,144 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe, Users, Mail, Sparkles } from 'lucide-react';
+import { ArrowRight, Globe, Users, Mail, Sparkles, Shield, Cpu, BarChart } from 'lucide-react';
 
-function MockDashboardImage({ type }: { type: string }) {
-  return (
-    <div className="w-full h-[200px] bg-[#F9F9F9] rounded-none overflow-hidden relative border-b border-[#E5E7EB] flex items-center justify-center p-4">
-      {type === 'web' && (
-        <div className="w-[85%] h-[80%] bg-white rounded-none shadow-sm border border-[#E5E7EB] flex flex-col overflow-hidden transform -rotate-2 scale-105">
-          <div className="h-4 bg-[#F9F9F9] border-b border-[#E5E7EB] flex items-center px-2 gap-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]"/><div className="w-1.5 h-1.5 rounded-full bg-[#E5E7EB]"/><div className="w-1.5 h-1.5 rounded-full bg-[#E5E7EB]"/>
-          </div>
-          <div className="flex-1 flex p-2 gap-2">
-            <div className="w-1/3 h-full bg-[#E5E7EB] rounded-none"/>
-            <div className="w-2/3 h-full bg-[#F9F9F9] rounded-none"/>
-          </div>
-        </div>
-      )}
-      {type === 'crm' && (
-        <div className="w-[90%] h-[90%] bg-white rounded-none shadow-sm border border-[#E5E7EB] p-3 flex flex-col gap-2">
-          <div className="w-24 h-3 bg-[#E5E7EB] rounded-none" />
-          <div className="flex gap-2">
-            <div className="w-12 h-12 rounded-full border-4 border-[#1A1A1A] border-r-transparent" />
-            <div className="flex flex-col gap-1">
-              <div className="w-16 h-2 bg-[#F9F9F9] rounded-none" />
-              <div className="text-xl font-bold text-[#1A1A1A]">827</div>
-            </div>
-          </div>
-          <div className="flex-1 bg-[#FDFDF0] rounded-none mt-2 flex flex-col gap-1 p-2 border border-[#E5E7EB]">
-            <div className="w-full h-4 bg-white rounded-none flex items-center px-1"><div className="w-4 h-4 rounded-full bg-[#E5E7EB]"/> <div className="w-16 h-1 ml-2 bg-[#E5E7EB] rounded-none"/></div>
-            <div className="w-full h-4 bg-white rounded-none flex items-center px-1"><div className="w-4 h-4 rounded-full bg-[#E5E7EB]"/> <div className="w-12 h-1 ml-2 bg-[#E5E7EB] rounded-none"/></div>
-          </div>
-        </div>
-      )}
-      {type === 'hr' && (
-        <div className="w-[90%] h-[90%] bg-white rounded-none shadow-sm border border-[#E5E7EB] p-3 flex flex-col gap-2">
-          <div className="w-20 h-3 bg-[#E5E7EB] rounded-none" />
-          <div className="w-full h-6 bg-[#F9F9F9] rounded-none flex items-center px-2">
-            <div className="w-3 h-3 text-[#1A1A1A]"/> <div className="w-20 h-1 bg-[#E5E7EB] rounded-none ml-2"/>
-          </div>
-          <div className="flex flex-col gap-2 mt-2">
-            {[1,2,3].map(i => (
-              <div key={i} className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-[#E5E7EB]" />
-                  <div className="flex flex-col gap-0.5"><div className="w-16 h-1.5 bg-[#E5E7EB] rounded-none"/><div className="w-10 h-1 bg-[#F9F9F9] rounded-none"/></div>
-                </div>
-                <div className="w-8 h-2 rounded-none bg-[#1A1A1A]" />
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-      {type === 'mail' && (
-        <div className="w-[90%] h-[90%] bg-white rounded-none shadow-sm border border-[#E5E7EB] flex overflow-hidden">
-          <div className="w-1/3 bg-[#FDFDF0] border-r border-[#E5E7EB] p-2 flex flex-col gap-2">
-            <div className="w-16 h-2 bg-[#1A1A1A] rounded-none" />
-            <div className="w-12 h-2 bg-[#E5E7EB] rounded-none" />
-            <div className="w-14 h-2 bg-[#E5E7EB] rounded-none" />
-          </div>
-          <div className="w-2/3 p-2 flex flex-col gap-2">
-            {[1,2,3].map(i => (
-              <div key={i} className="flex items-center gap-2 p-1 border-b border-[#F9F9F9] last:border-0">
-                <div className="w-5 h-5 rounded-full bg-[#E5E7EB]" />
-                <div className="flex flex-col gap-0.5"><div className="w-16 h-1 bg-[#1A1A1A] rounded-none"/><div className="w-20 h-1 bg-[#E5E7EB] rounded-none"/></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
+const services = [
+  {
+    title: 'Precision Web Architectures',
+    id: '01',
+    desc: 'Engineering high-performance, conversion-focused digital systems that serve as the foundation for your brand identity.',
+    icon: Globe,
+    tags: ['E-Commerce', 'Corporate Portals', 'Cloud Hosting']
+  },
+  {
+    title: 'Intelligent CRM Integration',
+    id: '02',
+    desc: 'Seamlessly weaving CRM ecosystems into your operational workflow to optimize client relationships and data retention.',
+    icon: Users,
+    tags: ['Salesforce', 'HubSpot', 'Custom API']
+  },
+  {
+    title: 'AI Operational Engines',
+    id: '03',
+    desc: 'Developing bespoke AI agents and automation matrices that reduce overhead and accelerate decision-making cycles.',
+    icon: Cpu,
+    tags: ['LLM Models', 'Task Automation', 'Predictive Ops']
+  },
+  {
+    title: 'Data Security Protocols',
+    id: '04',
+    desc: 'Implementing institutional-grade security frameworks to protect your most valuable enterprise assets and data streams.',
+    icon: Shield,
+    tags: ['Encryption', 'Threat Monitoring', 'Compliance']
+  }
+];
 
 export default function Services() {
-  const cards = [
-    {
-      type: 'web',
-      icon: Globe,
-      title: 'Website Redesigns',
-      desc: 'Modern, fast, and conversion-focused websites that elevate your brand and engage users.'
-    },
-    {
-      type: 'crm',
-      icon: Users,
-      title: 'CRM Systems',
-      desc: 'Smart CRM solutions that help you build stronger relationships and drive business growth.'
-    },
-    {
-      type: 'hr',
-      icon: Users,
-      title: 'Employee Platforms',
-      desc: 'Streamlined platforms for your team to communicate, collaborate, and get things done.'
-    },
-    {
-      type: 'mail',
-      icon: Mail,
-      title: 'Smart Mail Clients',
-      desc: 'Powerful email solutions with automation that save time and increase productivity.'
-    }
-  ];
-
   return (
-    <div className="flex-1 bg-transparent relative overflow-hidden font-sans">
-      <main className="max-w-[1440px] mx-auto px-4 md:px-10 pt-16 pb-24 relative z-10">
+    <div className="flex-1 bg-[#F9F9F9] min-h-screen">
+      <main className="max-w-[1440px] mx-auto px-4 md:px-16 py-20">
         
         {/* Header Section */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <div className="mb-24">
           <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white border border-[#1A1A1A] text-[#1A1A1A] text-[13px] font-semibold px-5 py-1.5 rounded-none mb-6 uppercase tracking-widest"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="text-[12px] uppercase tracking-[0.2em] font-semibold text-[#888] mb-4"
           >
-            What We Do
+            Capabilities
           </motion.div>
           <motion.h1 
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-[48px] md:text-[64px] font-bold text-[#1A1A1A] tracking-tight leading-none mb-4"
+            className="text-[48px] md:text-[80px] font-bold text-[#1A1A1A] tracking-tighter leading-[0.85] mb-10"
           >
-            Our Services
+            Operational <br/> Mastery.
           </motion.h1>
           <motion.p 
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-[18px] md:text-[20px] text-[#666]"
+            className="text-[18px] md:text-[22px] text-[#444748] max-w-[700px] leading-relaxed"
           >
-            Unified Enterprise Operational Engine Matrix
+            We provide the structural intelligence required to navigate and scale within the complexities of the modern BPO landscape.
           </motion.p>
         </div>
 
-        {/* 4 Column Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {cards.map((card, i) => (
+        {/* Services Gallery (Asymmetric Layout) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E5E7EB] border border-[#E5E7EB]">
+          {services.map((service, i) => (
             <motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 + (i * 0.1) }}
-              className="bg-[#FDFDF0] rounded-none p-3 pb-8 shadow-sm border border-[#E5E7EB] flex flex-col relative group"
+              key={service.id}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-white group relative overflow-hidden"
             >
-              <MockDashboardImage type={card.type} />
-              
-              {/* Floating Icon */}
-              <div className="absolute top-[176px] left-8 w-14 h-14 bg-white rounded-none shadow-sm flex items-center justify-center text-[#1A1A1A] border border-[#E5E7EB]">
-                <card.icon size={24} strokeWidth={1.5} />
-              </div>
+              <div className="p-10 md:p-16 h-full flex flex-col min-h-[500px]">
+                <div className="flex justify-between items-start mb-12">
+                  <div className="w-16 h-16 border border-[#1A1A1A] flex items-center justify-center bg-[#FDFDF0] group-hover:bg-[#1A1A1A] group-hover:text-white transition-colors duration-500">
+                    <service.icon size={28} strokeWidth={1.5} />
+                  </div>
+                  <span className="text-[40px] font-bold text-[#F3F4F6] group-hover:text-[#1A1A1A]/5 transition-colors duration-500">
+                    {service.id}
+                  </span>
+                </div>
 
-              <div className="px-5 pt-16">
-                <h3 className="text-[20px] font-bold text-[#1A1A1A] mb-3">{card.title}</h3>
-                <p className="text-[#666] text-[15px] leading-relaxed mb-6">{card.desc}</p>
-                <button className="w-10 h-10 rounded-none border border-[#E5E7EB] bg-white flex items-center justify-center text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all ml-auto">
-                  <ArrowRight size={16} />
-                </button>
+                <h3 className="text-[28px] md:text-[32px] font-bold text-[#1A1A1A] mb-6 leading-tight">
+                  {service.title}
+                </h3>
+                
+                <p className="text-[16px] text-[#666] leading-relaxed mb-10 max-w-[400px]">
+                  {service.desc}
+                </p>
+
+                <div className="mt-auto pt-10 flex flex-wrap gap-2">
+                  {service.tags.map(tag => (
+                    <span key={tag} className="text-[10px] uppercase tracking-widest font-bold border border-[#E5E7EB] px-3 py-1 text-[#888]">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Hover Reveal Action */}
+                <div className="absolute bottom-10 right-10 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                  <button className="flex items-center gap-3 text-[14px] font-bold uppercase tracking-widest text-[#1A1A1A]">
+                    View Details <ArrowRight size={18} />
+                  </button>
+                </div>
+              </div>
+              
+              {/* Architectural Detail (Top-Right Line) */}
+              <div className="absolute top-0 right-0 w-32 h-32 pointer-events-none">
+                <div className="absolute top-8 right-8 w-16 h-[1px] bg-[#E5E7EB]" />
+                <div className="absolute top-8 right-8 w-[1px] h-16 bg-[#E5E7EB]" />
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-          className="bg-white rounded-none border border-[#1A1A1A] p-6 md:p-10 flex flex-col md:flex-row items-center justify-between relative overflow-hidden"
+        {/* Analytics Teaser */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 p-12 md:p-20 bg-[#1A1A1A] text-white flex flex-col md:flex-row items-center justify-between gap-12"
         >
-          <div className="absolute left-[-20px] bottom-[-40px] w-[300px] h-[300px] opacity-20 pointer-events-none">
-            <div className="w-[200px] h-[200px] rounded-full border-[30px] border-[#1A1A1A] absolute top-10 left-10 transform rotate-12 skew-x-12" />
-          </div>
-
-          <div className="md:pl-[280px] flex-1 flex flex-col md:flex-row items-start md:items-center justify-between z-10 w-full gap-6">
-            <div className="flex flex-col items-start">
-              <div className="bg-[#1A1A1A] text-white text-[12px] font-semibold px-4 py-1.5 rounded-none mb-4 flex items-center gap-2 uppercase tracking-widest">
-                <Sparkles size={14} /> AI-Powered Growth
-              </div>
-              <h2 className="text-[28px] md:text-[32px] font-bold text-[#1A1A1A] mb-3">AI Web Agents & SEO Optimization</h2>
-              <p className="text-[#666] text-[16px] max-w-[500px]">
-                AI-driven agents that analyze, optimize, and scale your online presence for maximum visibility and results.
-              </p>
+          <div className="max-w-[500px]">
+            <div className="flex items-center gap-2 text-[#888] text-[12px] uppercase tracking-[0.2em] font-bold mb-6">
+              <BarChart size={16} /> Performance Metrics
             </div>
-            <button className="bg-[#1A1A1A] text-white px-8 py-4 rounded-none font-semibold flex items-center gap-2 hover:bg-[#333] transition-colors shadow-sm whitespace-nowrap">
-              Learn More <ArrowRight size={18} />
-            </button>
+            <h2 className="text-[32px] md:text-[44px] font-bold leading-tight mb-6">Real-time data at your fingertips.</h2>
+            <p className="text-[#888] text-[16px] leading-relaxed">
+              Every service we deploy includes a proprietary analytics suite designed to provide total transparency into system health and ROI.
+            </p>
           </div>
+          <button className="bg-white text-[#1A1A1A] px-12 py-5 font-bold text-[14px] uppercase tracking-widest hover:bg-[#FDFDF0] transition-colors whitespace-nowrap">
+            Schedule a Demo
+          </button>
         </motion.div>
 
       </main>

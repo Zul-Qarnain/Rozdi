@@ -14,14 +14,14 @@ export default function Home() {
         <div className="absolute bottom-[-10%] right-[0%] w-[50%] h-[50%] bg-[#FFFFFF] rounded-full blur-[120px] opacity-90" />
       </div>
 
-      <div className="flex-1 flex flex-col relative z-10">
+      <div className="flex-1 flex flex-col relative z-10 snap-start">
         
         {/* Hero Section */}
         <div className="flex-1 flex flex-col justify-center px-4 md:px-10 relative mt-10 md:mt-[40px]">
           <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-[1300px] mx-auto z-10">
             
             {/* Left Column */}
-            <div className="w-full md:w-[48%] flex flex-col items-start pr-8">
+            <div className="w-full md:w-[48%] flex flex-col items-start pr-0 md:pr-8">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15, duration: 0.6, ease: 'easeOut' }}
-                className="text-[clamp(48px,5.5vw,64px)] font-bold tracking-tight leading-[1.05] text-[#1A1A1A] mb-6"
+                className="text-[clamp(40px,5.5vw,64px)] font-bold tracking-tight leading-[1.05] text-[#1A1A1A] mb-6"
               >
                 AI Powered Tech<br/>Solutions For Your<br/>Business
               </motion.h1>
@@ -53,19 +53,19 @@ export default function Home() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.6, ease: 'easeOut' }}
-                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
+                className="flex flex-wrap items-center gap-4 w-full sm:w-auto"
               >
                 <Link
-                  href="/contact"
-                  className="bg-[#1A1A1A] text-white px-6 md:px-8 py-3.5 rounded-none font-semibold flex items-center justify-center gap-2 transition-opacity hover:opacity-90 shadow-sm text-[15px] whitespace-nowrap text-center w-full sm:w-auto"
+                  href="/join-us"
+                  className="bg-[#1A1A1A] text-white px-8 py-3.5 rounded-none font-semibold flex items-center justify-center gap-2 transition-opacity hover:opacity-90 shadow-sm text-[15px] whitespace-nowrap min-w-[160px]"
                 >
-                  Get Started <ArrowRight size={18} />
+                  Join Us <ArrowRight size={18} />
                 </Link>
                 <Link
                   href="/projects"
-                  className="bg-white border border-[#E5E7EB] text-[#1A1A1A] px-6 md:px-8 py-3.5 rounded-none font-semibold flex items-center justify-center gap-2 transition-colors hover:bg-[#F9F9F9] shadow-sm text-[15px] whitespace-nowrap text-center w-full sm:w-auto"
+                  className="bg-white border border-[#E5E7EB] text-[#1A1A1A] px-8 py-3.5 rounded-none font-semibold flex items-center justify-center gap-2 transition-colors hover:bg-[#F9F9F9] shadow-sm text-[15px] whitespace-nowrap min-w-[160px]"
                 >
-                  Learn More <ArrowRight size={18} />
+                  Explore <ArrowRight size={18} />
                 </Link>
               </motion.div>
             </div>

@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ArrowRight, HomeIcon, Layers, Folder, BookOpen, Users, ChevronDown, Menu, X } from 'lucide-react';
+import { ArrowRight, HomeIcon, Layers, Folder, BookOpen, Users, Menu, X } from 'lucide-react';
 import { Logo, LogoText } from '@/components/ui/Logo';
-import Image from 'next/image';
+
 import { useState } from 'react';
 
 function GlobalSidebar() {
@@ -41,16 +41,7 @@ function GlobalSidebar() {
         })}
       </nav>
 
-      {/* Bottom Profile */}
-      <div className="mt-auto flex flex-col items-center cursor-pointer">
-        <div className="w-10 h-10 rounded-full bg-gray-200 mb-2 overflow-hidden shadow-sm">
-          <Image src="https://i.pravatar.cc/150?u=admin" alt="Admin" width={40} height={40} className="object-cover" />
-        </div>
-        <span className="text-[12px] font-bold text-[#1A1A1A] leading-tight">John Doe</span>
-        <div className="flex items-center text-[#888] text-[10px] gap-0.5 mt-0.5 font-medium">
-          Admin <ChevronDown size={12} />
-        </div>
-      </div>
+      {/* Bottom Profile - Removed as per request */}
     </div>
   );
 }
@@ -94,10 +85,10 @@ function GlobalNavbar() {
       {/* Right Actions & Mobile Menu Toggle */}
       <div className="flex items-center gap-4">
         <Link
-          href="/contact"
+          href="/join-us"
           className="hidden md:flex bg-[#1A1A1A] text-white text-[14px] px-6 py-2.5 rounded-none font-semibold items-center gap-2 hover:bg-[#333] transition-colors shadow-sm"
         >
-          Contact Us <ArrowRight size={16} />
+          Join Us <ArrowRight size={16} />
         </Link>
         <button 
           className="xl:hidden p-2 text-[#1A1A1A]" 
@@ -124,11 +115,11 @@ function GlobalNavbar() {
             );
           })}
           <Link
-            href="/contact"
+            href="/join-us"
             onClick={() => setIsOpen(false)}
             className="bg-[#1A1A1A] text-white text-[16px] px-6 py-4 rounded-none font-semibold flex items-center justify-center gap-2 hover:bg-[#333] transition-colors shadow-sm mt-4"
           >
-            Contact Us <ArrowRight size={18} />
+            Join Us <ArrowRight size={18} />
           </Link>
         </div>
       )}

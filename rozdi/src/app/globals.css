@@ -18,6 +18,13 @@ body {
   background: var(--color-canvas);
   color: var(--color-charcoal);
   font-family: var(--font-sans);
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+section, .snap-start {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 * {

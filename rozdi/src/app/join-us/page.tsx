@@ -116,7 +116,7 @@ export default function JoinUs() {
                 Contact {mockTeam.find(m => m.id === selectedId)?.name.split(' ')[0]}
               </button>
               <button className="flex items-center gap-2 text-[#666] hover:text-[#1A1A1A] text-[14px] font-medium transition-colors uppercase tracking-widest">
-                <Download size={16} /> Download her full CV
+                <Download size={16} /> Download full CV
               </button>
             </div>
           </motion.div>
