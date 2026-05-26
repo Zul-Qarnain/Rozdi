@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import './globals.css';
 import { UnifiedLayout } from '@/components/layout/UnifiedLayout';
+import Providers from '@/components/layout/Providers';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -24,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased flex flex-col min-h-screen`}>
-        <UnifiedLayout>
-          {children}
-        </UnifiedLayout>
+        <Providers>
+          <UnifiedLayout>
+            {children}
+          </UnifiedLayout>
+        </Providers>
       </body>
     </html>
   );

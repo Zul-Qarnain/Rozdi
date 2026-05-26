@@ -1,3 +1,5 @@
+export const runtime = "experimental-edge";
+
 import { auth } from '@/auth'
 export default auth((req) => {
   const isAdminRoute = req.nextUrl.pathname.startsWith('/admin')
