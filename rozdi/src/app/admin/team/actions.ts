@@ -18,10 +18,10 @@ export async function saveTeamMember(data: Partial<TeamMember>, id?: string) {
   if (id) {
     await prisma.teamMember.update({
       where: { id },
-      data: data as any
+      data: data as any // eslint-disable-line @typescript-eslint/no-explicit-any
     });
   } else {
-    await prisma.teamMember.create({ data: data as any });
+    await prisma.teamMember.create({ data: data as any }); // eslint-disable-line @typescript-eslint/no-explicit-any
   }
 
   revalidatePath('/admin/team');

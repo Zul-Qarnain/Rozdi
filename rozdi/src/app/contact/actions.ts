@@ -26,7 +26,7 @@ export async function submitLead(formData: FormData) {
     });
 
     return { success: true };
-  } catch (_error) {
+  } catch (_error) { // eslint-disable-line @typescript-eslint/no-unused-vars
     return { success: false, error: 'Something went wrong. Please try again.' };
   }
 }

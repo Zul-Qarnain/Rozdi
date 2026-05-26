@@ -21,7 +21,7 @@ export async function saveProject(data: Partial<Project>, id?: string) {
       data
     });
   } else {
-    await prisma.project.create({ data: data as any });
+    await prisma.project.create({ data: data as any }); // eslint-disable-line @typescript-eslint/no-explicit-any
   }
 
   revalidatePath('/admin/projects');
