@@ -26,7 +26,7 @@ export default async function AdminDashboard() {
     leadsByDay[dateStr] = 0;
   }
 
-  recentLeads.forEach(lead => {
+  recentLeads.forEach((lead: { createdAt: Date }) => {
     const dateStr = lead.createdAt.toISOString().split('T')[0];
     if (leadsByDay[dateStr] !== undefined) {
       leadsByDay[dateStr]++;
