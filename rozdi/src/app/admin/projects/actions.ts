@@ -9,8 +9,9 @@
 import { prisma } from '@/lib/prisma';
 import { revalidatePath } from 'next/cache';
 import { auth } from '@/auth';
+import { Project } from '@prisma/client';
 
-export async function saveProject(data: any, id?: string) {
+export async function saveProject(data: Partial<Project>, id?: string) {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
 
@@ -20,7 +21,7 @@ export async function saveProject(data: any, id?: string) {
       data
     });
   } else {
-    await prisma.project.create({ data });
+    await prisma.project.create({ data: data as any });
   }
 
   revalidatePath('/admin/projects');

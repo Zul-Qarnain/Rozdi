@@ -26,7 +26,7 @@ export async function submitLead(formData: FormData) {
     });
 
     return { success: true };
-  } catch (error) {
+  } catch (_error) {
     return { success: false, error: 'Something went wrong. Please try again.' };
   }
 }

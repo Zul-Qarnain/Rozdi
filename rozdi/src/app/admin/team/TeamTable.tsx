@@ -37,7 +37,7 @@ export function TeamTable({ members }: { members: TeamMember[] }) {
     try {
       academicMilestones = JSON.parse(formData.get('academicMilestones') as string || '[]');
       awards = JSON.parse(formData.get('awards') as string || '[]');
-    } catch(err) {
+    } catch(_err) {
       alert("Invalid JSON format in Milestones or Awards");
       return;
     }

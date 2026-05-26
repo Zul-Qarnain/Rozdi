@@ -9,18 +9,19 @@
 import { prisma } from '@/lib/prisma';
 import { revalidatePath } from 'next/cache';
 import { auth } from '@/auth';
+import { TeamMember } from '@prisma/client';
 
-export async function saveTeamMember(data: any, id?: string) {
+export async function saveTeamMember(data: Partial<TeamMember>, id?: string) {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
 
   if (id) {
     await prisma.teamMember.update({
       where: { id },
-      data
+      data: data as any
     });
   } else {
-    await prisma.teamMember.create({ data });
+    await prisma.teamMember.create({ data: data as any });
   }
 
   revalidatePath('/admin/team');

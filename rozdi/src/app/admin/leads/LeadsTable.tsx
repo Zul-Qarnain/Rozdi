@@ -45,7 +45,7 @@ export function LeadsTable({ leads: initialLeads }: { leads: Lead[] }) {
             const newStatus = e.target.value;
             const id = info.row.original.id;
             // Update local state first for instant feedback
-            setData(prev => prev.map(item => item.id === id ? { ...item, status: newStatus as any } : item));
+            setData(prev => prev.map(item => item.id === id ? { ...item, status: newStatus } : item));
             await updateLeadStatus(id, newStatus);
           }}
           className="border border-[var(--color-border)] bg-white text-[13px] py-1 px-2 focus:outline-none focus:border-[var(--color-charcoal)]"
