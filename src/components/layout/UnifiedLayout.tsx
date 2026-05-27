@@ -14,7 +14,7 @@ function GlobalSidebar() {
     { icon: Layers, label: 'Services', href: '/services' },
     { icon: Folder, label: 'Projects', href: '/projects' },
     { icon: BookOpen, label: 'Case Studies', href: '/case-studies' },
-    { icon: Users, label: 'Team', href: '/join-us' },
+    { icon: Users, label: 'Team', href: '/team' },
   ];
 
   return (
@@ -54,7 +54,7 @@ function GlobalNavbar() {
     { label: 'Services', href: '/services' },
     { label: 'Case Studies', href: '/case-studies' },
     { label: 'Projects', href: '/projects' },
-    { label: 'Team', href: '/join-us' },
+    { label: 'Team', href: '/team' },
   ];
 
   return (
@@ -85,10 +85,10 @@ function GlobalNavbar() {
       {/* Right Actions & Mobile Menu Toggle */}
       <div className="flex items-center gap-4">
         <Link
-          href="/join-us"
+          href="/contact"
           className="hidden md:flex bg-[#1A1A1A] text-white text-[14px] px-6 py-2.5 rounded-none font-semibold items-center gap-2 hover:bg-[#333] transition-colors shadow-sm"
         >
-          Join Us <ArrowRight size={16} />
+          Contact Us <ArrowRight size={16} />
         </Link>
         <button 
           className="xl:hidden p-2 text-[#1A1A1A]" 
@@ -115,11 +115,11 @@ function GlobalNavbar() {
             );
           })}
           <Link
-            href="/join-us"
+            href="/contact"
             onClick={() => setIsOpen(false)}
             className="bg-[#1A1A1A] text-white text-[16px] px-6 py-4 rounded-none font-semibold flex items-center justify-center gap-2 hover:bg-[#333] transition-colors shadow-sm mt-4"
           >
-            Join Us <ArrowRight size={18} />
+            Contact Us <ArrowRight size={18} />
           </Link>
         </div>
       )}

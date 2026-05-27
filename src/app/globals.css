@@ -30,3 +30,7 @@ section, .snap-start {
 * {
   /* removed border-radius override to match new design */
 }
+
+nextjs-portal {
+  display: none !important;
+}

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe, Users, Mail, Sparkles, Shield, Cpu, BarChart } from 'lucide-react';
+import { ArrowRight, Globe, Users, Shield, Cpu, BarChart } from 'lucide-react';
 
 const services = [
   {

@@ -56,10 +56,10 @@ export default function Home() {
                 className="flex flex-wrap items-center gap-4 w-full sm:w-auto"
               >
                 <Link
-                  href="/join-us"
+                  href="/contact"
                   className="bg-[#1A1A1A] text-white px-8 py-3.5 rounded-none font-semibold flex items-center justify-center gap-2 transition-opacity hover:opacity-90 shadow-sm text-[15px] whitespace-nowrap min-w-[160px]"
                 >
-                  Join Us <ArrowRight size={18} />
+                  Contact Us <ArrowRight size={18} />
                 </Link>
                 <Link
                   href="/projects"
@@ -78,10 +78,10 @@ export default function Home() {
           </div>
 
           {/* Hero Footer */}
-          <div className="absolute bottom-8 left-10 right-10 flex flex-col md:flex-row items-center justify-between text-[#888] text-[13px] font-medium z-10 w-[calc(100%-80px)]">
-            <div className="flex items-center gap-8">
+          <div className="mt-16 pb-8 flex flex-col md:flex-row items-center justify-between text-[#888] text-[13px] font-medium z-10 w-full max-w-[1300px] mx-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 mb-6 md:mb-0 text-center sm:text-left">
               <span>Trusted by leading companies</span>
-              <div className="flex items-center gap-6 text-[#6B7280] font-bold text-[15px]">
+              <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-[#6B7280] font-bold text-[15px]">
                 <span className="flex items-center gap-1.5"><div className="w-4 h-4 rounded-full bg-blue-500"/> Google</span>
                 <span className="flex items-center gap-1.5"><div className="w-4 h-4 grid grid-cols-2 gap-[1px]"><div className="bg-red-500"/><div className="bg-green-500"/><div className="bg-blue-500"/><div className="bg-yellow-500"/></div> Microsoft</span>
                 <span className="flex items-center gap-1.5 text-black font-extrabold text-[16px] tracking-tighter"><span className="text-[#E11D48]">#</span>slack</span>
@@ -89,8 +89,8 @@ export default function Home() {
                 <span className="flex items-center gap-1.5"><div className="w-4 h-4 bg-[#0061FE] rotate-45 skew-x-12"/> Dropbox</span>
               </div>
             </div>
-            <div className="flex items-center gap-6 mt-4 md:mt-0">
-              <span>&copy; 2024 Rozdi. All rights reserved.</span>
+            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
+              <span className="text-center">&copy; 2024 Rozdi. All rights reserved.</span>
               <Link href="/privacy" className="hover:text-[#444] transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-[#444] transition-colors">Terms of Service</Link>
             </div>
