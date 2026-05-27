@@ -1,3 +1,4 @@
+export const runtime = "experimental-edge";
 
 import { auth } from '@/auth'
 export default auth((req) => {
